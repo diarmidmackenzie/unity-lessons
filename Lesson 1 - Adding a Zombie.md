@@ -12,7 +12,7 @@ We decided to use an existing animated 3D model.
 
 We searched on sketchfab, and found this model, which seemed like a good choice:
 
-https://sketchfab.com/3d-models/zombie-walk-test-165fd9342c364216bfdd8c2f1102223c
+[https://sketchfab.com/3d-models/zombie-walk-test-165fd9342c364216bfdd8c2f1102223c](https://sketchfab.com/3d-models/zombie-walk-test-165fd9342c364216bfdd8c2f1102223c)
 
 
 
@@ -32,7 +32,7 @@ What we liked about it:
 
 First we download the 3D model using the link on the page.
 
-![image-20220214103651678](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214103651678.png)
+![image-20220214103651678](.\image-20220214103651678.png)
 
 We choose to download in FBX format, which works well with Unity.
 
@@ -48,13 +48,13 @@ In the Unity Project panel, open up "Assets / FPS / Art / Models" and drag the F
 
 Now drag the model into somewhere in the Game scene.  You should see the Zombie model in the scene (with no textures yet), and a new object called "Zombie Walk" in the Hierarchy on the left.
 
-![image-20220214105111898](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214105111898.png)
+![image-20220214105111898](.\image-20220214105111898.png)
 
 
 
 Select "Zombie Walk" in the Hierarchy, then in the "Inspector" panel on the right, click on Model / Select.
 
-![image-20220214105238029](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214105238029.png)
+![image-20220214105238029](.\image-20220214105238029.png)
 
 
 
@@ -66,7 +66,7 @@ In the Project window, you'll now see you have a new material called "No name"
 
 
 
-![image-20220214105542414](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214105542414.png)
+![image-20220214105542414](.\image-20220214105542414.png)
 
 
 
@@ -77,7 +77,7 @@ Now we want to set this material up to use the textures that came with the Zombi
 
 Select the material, and in the Inspector, click where it says Shader / Standard, and choose "Nature / Tree  Creator Bark"
 
-![image-20220214105745982](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214105745982.png)
+![image-20220214105745982](.\image-20220214105745982.png)
 
 
 
@@ -95,7 +95,7 @@ Actually, Nature / Tree Creator Bark only supports 3 out of 4 of these maps (it 
 
 After choosing that shader, you should now see that the material has slots available for "Base", "Normal" and "Gloss" texture maps.
 
-![image-20220214110320973](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214110320973.png)
+![image-20220214110320973](.\image-20220214110320973.png)
 
 
 
@@ -103,7 +103,7 @@ In the Project window, create a new folder FPS / Art / Textures / Zombie /
 
 Now go back to the textures folder from the zip file, and drag the Diffuse, Gloss and Normal texture files into this folder...
 
-![image-20220214110515421](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214110515421.png)
+![image-20220214110515421](.\image-20220214110515421.png)
 
 
 
@@ -111,7 +111,7 @@ Now, with the inspector open on the new "Zombie" Material, you should be able to
 
 You can type "zom" in the search box to help find the textures you just uploaded.
 
-![image-20220214110936064](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214110936064.png)
+![image-20220214110936064](.\image-20220214110936064.png)
 
 Assign them as follows:
 
@@ -121,7 +121,7 @@ Assign them as follows:
 
 Now look at your Zombie again in the game window.  You should see him looking distinctly more Zombie-like and terrifying:
 
-![image-20220214111153548](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214111153548.png)
+![image-20220214111153548](.\image-20220214111153548.png)
 
 
 
@@ -139,15 +139,15 @@ Find the "Enemies" section of the Hierarchy.
 
 Right click on the Enemy_HoverBot and copy, then right click & paste.  You'll now have a new entity called Enemy_HoverBot (1) at the bottom of the hierarchy.
 
-![image-20220214111603539](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214111603539.png)
+![image-20220214111603539](.\image-20220214111603539.png)
 
 Rename this new entity as "Zombie", and move him up to be with the other enemies.
 
-![image-20220214111528696](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214111528696.png)
+![image-20220214111528696](.\image-20220214111528696.png)
 
 Finally, so we can focus on the zombie, open the original Enemy_HoverBot in the inspector, and clear the checkbox to the left of the entity name.  This will remove him from the scene (temporarily - we can easily add him back later - or delete him if/when we decide we don't want him any more.)
 
-![image-20220214111803305](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214111803305.png)
+![image-20220214111803305](.\image-20220214111803305.png)
 
 
 
@@ -155,19 +155,19 @@ We now have an Entity called "Zombie" - but he doesn't look like a Zombie yet.  
 
 If you expand "Zombie" in the hierarchy, you'll see a bunch of sub-entities.  BasicRobot is the one that represents the appearance, which we want to replace.
 
-![image-20220214111931152](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214111931152.png)
+![image-20220214111931152](.\image-20220214111931152.png)
 
 Right click on Zombie, and select "Unpack Prefab"
 
 Now drag the "Zombie Walk" entity to become a child of "Zombie", alongside "Basic Robot", and disable the "BasicRobot" entity in the inspector panel by clearing the checkbox next to the entity name.
 
-![image-20220214112108952](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214112108952.png)
+![image-20220214112108952](.\image-20220214112108952.png)
 
 (we could have deleted BasicRobot, and will do so later, but disabling has the same effect for now, and means it's easy to go back, or compare against how things were set up before).
 
 Finally, open the "Zombie_walk" object in the inspector and set Transform / Position to 0 , 0, 0.  This will ensure that the Zombie model is positioned in the correct place (as opposed to wherever you happened to drag him into the scene)
 
-![image-20220214112855665](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214112855665.png)
+![image-20220214112855665](.\image-20220214112855665.png)
 
 
 
@@ -183,7 +183,7 @@ There may be quite a few differences in the behaviour we want from the Zombie vs
 
 The easiest way to disable the lasers is to inpsect the Zombie / WeaponRoot / Weapon_EyeLazers entity, and in Weapon Controller (Script), set "Shoot Type" to "Manual"
 
-![image-20220214113220416](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214113220416.png)
+![image-20220214113220416](.\image-20220214113220416.png)
 
 
 
@@ -213,25 +213,25 @@ In Project, under FPS / Animation / Controllers, right-click, and Create... / An
 
 Rename it to "Zombie Animator Controller"
 
-![image-20220214114219879](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214114219879.png)
+![image-20220214114219879](.\image-20220214114219879.png)
 
 
 
 Double click on this to open the Animator window. Right click in the middle of the window and Create State / Empty
 
-![image-20220214114419795](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214114419795.png)
+![image-20220214114419795](.\image-20220214114419795.png)
 
 
 
 Using the inspector panel on the right, rename this to "Walk", and set "Motion" to "mixamo.com" (which is the name that the walking animation was give in the FBX file that we imported)
 
-![image-20220214114532850](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214114532850.png)
+![image-20220214114532850](.\image-20220214114532850.png)
 
 
 
 Now, back in the animation window, right click on "Walk", select "Make Transition", and then drag the white arrow that appears back into the "Walk" box.
 
-![image-20220214114740954](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214114740954.png)
+![image-20220214114740954](.\image-20220214114740954.png)
 
 
 
@@ -239,7 +239,7 @@ You should get a result that looks like this:
 
 
 
-![image-20220214114825712](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214114825712.png)
+![image-20220214114825712](.\image-20220214114825712.png)
 
 
 
@@ -247,7 +247,7 @@ What this shows is that when the animator begins, we'll do the "Walk" animation,
 
 Now, go back to "Zombie Walk" in the inspector, select the "Animator" component, and select the "Zombie Animator Controller" that we just created.
 
-![image-20220214115143219](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214115143219.png)
+![image-20220214115143219](.\image-20220214115143219.png)
 
 
 
@@ -261,7 +261,7 @@ To slow down the movement speed, open the Zombie entity in the inspector, and fi
 
 Under "steering" there is a setting "speed", set to 3.5.  Reduce this to 0.35, which is a good fit for the default speed of the zombie walking animation.
 
-![image-20220214132504732](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214132504732.png)
+![image-20220214132504732](.\image-20220214132504732.png)
 
 If you play the game now, you'll see the zombie is moving a lot more slowly, but there's still a problem with the animation.
 
@@ -271,13 +271,13 @@ To see more clearly what's going on here. in the Project view, navigate to Asset
 
 In the bottom right corner of the screen you can see the animation, in which the zombie walks forwards, and then snaps back to his start position.
 
-![image-20220214132952154](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214132952154.png)
+![image-20220214132952154](.\image-20220214132952154.png)
 
 To get the Zombie moving properly, we need to eliminate this jump.
 
 In the panel just above, check the boxes marked "Loop Time" and "Loop Pose".
 
-![image-20220214133035575](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214133035575.png)
+![image-20220214133035575](.\image-20220214133035575.png)
 
 
 
@@ -303,9 +303,9 @@ Find the top-level Zombie entity in the Hierarchy, hold down the left mouse butt
 
 This creates a new "Zombie" prefab, and you'll see that the Zombie entity in the hierarchy has now turned to a solid blue icon.
 
-![image-20220214133708512](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214133708512.png)
+![image-20220214133708512](.\image-20220214133708512.png)
 
-![image-20220214133724107](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214133724107.png)
+![image-20220214133724107](.\image-20220214133724107.png)
 
 
 
@@ -319,13 +319,13 @@ With the "scene" view open, drag the zombie prefab into the scene, and it will c
 
 You can add these wherever you like...
 
-![image-20220214134023258](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214134023258.png)
+![image-20220214134023258](.\image-20220214134023258.png)
 
 
 
 To keep things organized, reposition the Zombies in the Hierarchy view, so that they appear under the ==ENEMIES== heading.
 
-![image-20220214134048997](C:\Users\ASUS\Documents\GitHub\Writing\unity-lessons\image-20220214134048997.png)
+![image-20220214134048997](.\image-20220214134048997.png)
 
 ### What Next?
 
