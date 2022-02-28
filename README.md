@@ -4,5 +4,7 @@ Published lessons so far:
 
 [Lesson 1 - Adding a Zombie](https://diarmidmackenzie.github.io/unity-lessons/Lesson%201%20-%20Adding%20a%20Zombie.html)
 
+[Lesson 2 - Zombie Improvements](https://diarmidmackenzie.github.io/unity-lessons/Lesson%202%20-%20Zombie%20Improvements.html)
+
 
 
