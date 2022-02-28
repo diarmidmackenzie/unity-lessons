@@ -30,7 +30,7 @@ What we liked about it:
 
 ### Getting the Model into Unity
 
-First we download the 3D model using the link on the page.
+First we download the 3D model using the link on the page (you'll need to create a free sketchfab account)
 
 ![image-20220214103651678](.\image-20220214103651678.png)
 
