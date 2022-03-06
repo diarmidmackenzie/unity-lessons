@@ -6,5 +6,5 @@ Published lessons so far:
 
 [Lesson 2 - Zombie Improvements](https://diarmidmackenzie.github.io/unity-lessons/Lesson%202%20-%20Zombie%20Improvements.html)
 
-
+[Lesson 3 - Weapon Systems GO!](https://diarmidmackenzie.github.io/unity-lessons/Lesson%203%20-%20Weapon%20Systems%20GO!.html)
 
