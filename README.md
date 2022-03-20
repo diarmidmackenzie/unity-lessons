@@ -8,3 +8,9 @@ Published lessons so far:
 
 [Lesson 3 - Weapon Systems GO!](https://diarmidmackenzie.github.io/unity-lessons/Lesson%203%20-%20Weapon%20Systems%20GO!.html)
 
+[Lesson 4 - Player Movement (Part 1)](https://diarmidmackenzie.github.io/unity-lessons/Lesson%204%20-%20Player%20Movement%20(Part%201).html)
+
+
+
+
+
