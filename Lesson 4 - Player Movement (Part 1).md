@@ -525,6 +525,10 @@ Based on the above, here's two suggested exercises to work on:
 
 Hints:
 
+- For sprinting and sliding, there's a very simple fix (can you see why this works?)
+
+  `if (isSprinting)` -> `if (isSprinting  && isGrounded)`
+
 - For sliding on slopes, it could be helpful to build a range of different slopes of different lengths & gradients for testing.  Try sliding up, down and across the slopes.
 
 - `characterVelocity` is a `Vector3` that contains the current velocity of the player's character.
