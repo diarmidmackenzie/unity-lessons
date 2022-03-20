@@ -499,9 +499,10 @@ Some things that I noticed.
 - Have we got sliding correct for slopes?
 
   - There's already a slope in the game, which you can test, and you could easily add a wider variety of slopes to test with.
+  - If you leave "Acceleration Speed in the Air" set to a non-zero value, then holding down W will allow you to slide up slopes pretty fast in a way that feels highly unrealistic.  If you set this value to zero, the handling of sliding on slopes feels better, but I'm not sure it's completely correct yet.
   - Actually, the approach we took of using the aerial controls has worked out pretty well.  If you slide down a slope, you accelerate over time, and if you try to slide up a slope, you actually slide backwards down it, which is quite a nice result.
   - But I'm not sure about the duration of the slide.   Currently we always slide for 1 second.  But ideally how long we slide for would depend on the terrain - if we start sliding down a slope, maybe we should keep sliding, until we reach the bottom?
-
+  
   
 
 ### Exercises
@@ -509,29 +510,40 @@ Some things that I noticed.
 Based on the above, here's two suggested exercises to work on:
 
 1. Fix the interaction between sprinting & sliding, so that you can go into a slide when landing, even when sprinting.
-2. Devise a solution that allows a player to slide down a long slope until they reach the bottom.
+
+2. Add independent settings for "Acceleration Speed in the Air" and "Acceleration Speed while Sliding".
+
+3. Devise a solution that allows a player to slide down a long slope until they reach the bottom.
+
+4. Test & refine the realism of movement and acceleration when sliding on slopes.
+
+5. Add a new "stance" icon that indicates that the player is sliding (rather than standing or crouching)
+
+   ![image-20220320153515216](image-20220320153515216.png)
 
 
 
 Hints:
 
-- For extended sliding, you may find it useful to use one or both of the following:
+- For sliding on slopes, it could be helpful to build a range of different slopes of different lengths & gradients for testing.  Try sliding up, down and across the slopes.
 
-  - `characterVelocity` is a `Vector3` that contains the current velocity of the player's character.  You can get the magnitude of the vector (i.e. the player's current speed) via `characterVelocity.magnitude`
+- `characterVelocity` is a `Vector3` that contains the current velocity of the player's character.
 
-    - Moe documentation on Unity `Vector3`s here: https://docs.unity3d.com/ScriptReference/Vector3.html
+  - You can get the magnitude of the vector (i.e. the player's current speed) via `characterVelocity.magnitude`
+  - You could multiply the velocity every frame by a number slightly smaller than 1, so simulate the effects of friction in slowing down sliding.
+  - More documentation on Unity `Vector3`s here: https://docs.unity3d.com/ScriptReference/Vector3.html
 
-  - you can also determine the slope of the surface that the character is standing on by looking at the "normal" from the collision of the player with the ground.  The "normal" of a surface is a vector that is perpendicular to that surface (so the normal of flat ground is directly up).  Take a look at this code from `GroundCheck()`which uses these normals to determine whether a collision should be considered a collision with the floor (rather than e.g. a wall).
+- you can also determine the slope of the surface that the character is standing on by looking at the "normal" from the collision of the player with the ground.  The "normal" of a surface is a vector that is perpendicular to that surface (so the normal of flat ground is directly up).  Take a look at this code from `GroundCheck()`which uses these normals to determine whether a collision should be considered a collision with the floor (rather than e.g. a wall).
 
-    ```
-                    // storing the upward direction for the surface found
-                    m_GroundNormal = hit.normal;
-    
-                    // Only consider this a valid ground hit if the ground normal goes in the same direction as the character up
-                    // and if the slope angle is lower than the character controller's limit
-                    if (Vector3.Dot(hit.normal, transform.up) > 0f &&
-                        IsNormalUnderSlopeLimit(m_GroundNormal))
-    ```
+  ```
+                  // storing the upward direction for the surface found
+                  m_GroundNormal = hit.normal;
+  
+                  // Only consider this a valid ground hit if the ground normal goes in the same direction as the character up
+                  // and if the slope angle is lower than the character controller's limit
+                  if (Vector3.Dot(hit.normal, transform.up) > 0f &&
+                      IsNormalUnderSlopeLimit(m_GroundNormal))
+  ```
 
-    
+- 
 
