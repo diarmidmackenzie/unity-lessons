@@ -211,7 +211,7 @@ This will ensure that whenever crouch or uncrouch, we'll strop sliding.
 
 ```
 
-        if (m_LastTimeJumped.time > slideStartTime + 1) {
+        if (Time.time > slideStartTime + 1) {
             isSliding = false;
         }
 ```
@@ -374,7 +374,7 @@ m_TargetCharacterHeight = capsuleHeightCrouching;
 
 This gives a slight additional reduction to the player's height while sliding vs. crouching.
 
-It might be tempting to reduce this further, to say 0.4 or 0.5 (40cm or 50cm).  Unfortunately, if we do this we hit problems.  The player is modelled as a capsule with a radius of 0.35 (see the "Character Controller" component on the Player GameObject).  If you reduce the height of the capsule below twice the radius, this creates a bunch of problems for the ohysics engine (you'll see the player jerk around and take damage).
+It might be tempting to reduce this further, to say 0.4 or 0.5 (40cm or 50cm).  Unfortunately, if we do this we hit problems.  The player is modelled as a capsule with a radius of 0.35 (see the "Character Controller" component on the Player GameObject).  If you reduce the height of the capsule below twice the radius, this creates a bunch of problems for the physics engine (you'll see the player jerk around and take damage).
 
 There are various ways this could potentially be fixed, but for now it's simplest just to leave the sliding height at 0.7.
 
