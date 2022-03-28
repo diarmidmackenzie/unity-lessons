@@ -197,15 +197,15 @@ This will ensure that whenever crouch or uncrouch, we'll strop sliding.
 
 3. Just after this line...
 
-   ```
+```
        public bool isSliding { get; private set; }
-   ```
+```
 
    ... add this line....
 
-   ```
+```
        private float slideStartTime = 0;
-   ```
+```
 
    At the beginning of Update(), add these lines...   
 
@@ -423,14 +423,14 @@ To briefly explain these changes...
 
   - `targetAngle = isSliding ? A : B` is a convenient one-line shorthand in C# for this...
 
-    ```
+```
     if (isSliding) {
         targetAngle = A;
     }
     else {
         targetAngle = B;
     }
-    ```
+```
 
 - We use a Math function called "Lerp", which we use to linearly interpolate between the current value and the target value, based on the time passed since the last frame.
 
@@ -548,6 +548,8 @@ Hints:
                   if (Vector3.Dot(hit.normal, transform.up) > 0f &&
                       IsNormalUnderSlopeLimit(m_GroundNormal))
   ```
+
+  
 
 - 
 
