@@ -232,6 +232,30 @@ If we test with this code, we'll see a few things:
 
 
 
+There's one more problem, however.  If you slide down a long slope, you'll see that fairly soon you reach a terminal velocity and stop accelerating.
+
+This is due to this code, which limits speed "in the air" (and also, thanks to our changes, when sliding).
+
+```
+// limit air speed to a maximum, but only horizontally
+                float verticalVelocity = characterVelocity.y;
+                Vector3 horizontalVelocity = Vector3.ProjectOnPlane(characterVelocity, Vector3.up);
+                horizontalVelocity = Vector3.ClampMagnitude(horizontalVelocity, maxSpeedInAir * speedModifier);
+                characterVelocity = horizontalVelocity + (Vector3.up * verticalVelocity);
+```
+
+Even though velocity is only restricted horizontally, this still limits our movement on slopes, as we can't slide down a slope quickly without having a substantial horizontal component of our velocity.
+
+We could modify this code to either remove the limit, or not apply it when sliding.
+
+However the simplest way to get rid of the limit is just to adjust the `maxSpeedinAir` value configured on the player.
+
+Set this to a super-high value, like 10000, and you can slide down slopes as fast as you like!
+
+![image-20220423163423652](image-20220423163423652.png)
+
+Increasing the limit not only when sliding, but also when in the air, means that we can build up speed on a ramp, then take off (either by jumping, or thanks to a curve on the ramp), and keep a realistic speed.  If we clamped our horizontal speed in the air to a low value, we wouldn't get realistic physics in these situations.
+
 ### Reworking Fall Damage
 
 The following code implements fall damage.  This code only runs on landing (when `isGrounded` transitions from `false` to `true` ).  It checks the character's falling speed, and applies damage based on this.
@@ -335,5 +359,7 @@ To wrap up, let's revisit what we were trying to cover:
 2. Devise a solution that allows a player to slide down a long slope until they reach the bottom.
    - Fixed by ending slides based on movement speed, rather than a timer.
 3. Test & refine the realism of movement and acceleration when sliding on slopes.
-   - The movement on slopes we got with the existing code was actually pretty good.  The one area we had to fix up was fall damage.
+   - The movement on slopes we got with the existing code was actually pretty good.  The two areas we had to fix up were (a) removing the limits on horizontal speed in the air & when sliding, and (b) fall damage.
+   
+     
 
