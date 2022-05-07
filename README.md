@@ -12,6 +12,10 @@ Published lessons so far:
 
 [Lesson 4A - Sliding About](https://diarmidmackenzie.github.io/unity-lessons/Lesson%204A%20-%20Sliding%20about.html)
 
+[Lesson 5 - Player Movement (Part 2)](https://diarmidmackenzie.github.io/unity-lessons/Lesson%205%20-%20Player%20Movement%20(Part%202).html)
+
+
+
 
 
 

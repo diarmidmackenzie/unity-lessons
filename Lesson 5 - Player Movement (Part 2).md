@@ -56,7 +56,7 @@ I added this just below these lines, so that it appears just below this setting 
 
 Here's what the new setting looks like in the inspector:
 
-![image-20220425124009116](image-20220425124009116.png)
+![image-20220507111059813](image-20220507111059813.png)
 
 
 
@@ -261,8 +261,6 @@ Another common approach to wall running is that when a player jumps at a wall, m
 
 We're now going to look at implementing that.
 
-
-
 Here's how we could go about implementing such a scheme.
 
 - define new parameters on the PlayerCharacterController script:
@@ -296,8 +294,6 @@ Here's how we could go about implementing such a scheme.
   - the best way to achieve this is to go into the "grounded movement" branch in `HandleCharacterMovement()` when `isWallRunning` is set.  This has the benefit of not only *not* applying gravity, but also implementing footstep sounds - which we also want when wall running.
 
 The exact lines of code needed to implement the above are left for you as an exercise... (but see below if you get stuck)
-
-
 
 ### Exercises
 
